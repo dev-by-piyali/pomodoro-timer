@@ -1,43 +1,99 @@
-# Svelte + Vite
+# Pomodoro Timer
 
-This template should help get you started developing with Svelte in Vite.
+A minimalist Pomodoro Timer built with Svelte.
 
-## Recommended IDE Setup
+## 🍅 What is the Pomodoro Technique?
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+The Pomodoro Technique is a time management method that uses a timer to break work into intervals, traditionally 25 minutes in length, separated by short breaks. This approach helps improve focus, reduce mental fatigue, and maintain consistent productivity throughout the day.
 
-## Need an official Svelte framework?
+## 🎯 How It Works
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+### Timer Flow
 
-## Technical considerations
+1. **Work Session** (25 minutes)
+   - Start your focused work period
+   - Timer counts down from 25:00 to 00:00
 
-**Why use this over SvelteKit?**
+2. **Short Break** (5 minutes)
+   - After completing a work session, take a 5-minute break
+   - Timer automatically starts counting down
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+3. **Long Break** (15 minutes)
+   - After completing 4 work sessions, enjoy a longer 15-minute break
+   - Session counter resets after the long break
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+### Session Cycle
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
-
-**Why include `.vscode/extensions.json`?**
-
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
-
-**Why enable `checkJs` in the JS template?**
-
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
 ```
+Work (25 min) → Short Break (5 min) → 
+Work (25 min) → Short Break (5 min) → 
+Work (25 min) → Short Break (5 min) → 
+Work (25 min) → Long Break (15 min) → 
+[Cycle repeats]
+```
+
+## 🎮 Usage
+
+### Controls
+
+- **Start Button**: Begins the timer countdown
+  - Disabled when timer is already running
+  - Automatically starts after breaks
+
+- **Pause Button**: Pauses the current timer
+  - Disabled when timer is not running
+  - Allows you to resume from where you left off
+
+- **Reset Button**: Resets the timer to initial state
+  - Stops the timer if running
+  - Resets to 25-minute work session
+  - Clears session counter
+
+### Session Types
+
+The timer displays the current session type at the top:
+- **WORK**: Active work/focus session
+- **SHORT BREAK**: 5-minute rest period
+- **LONG BREAK**: 15-minute extended rest period
+
+## ⚙️ Configuration
+
+The timer uses the following default values (in seconds):
+
+```javascript
+DEFAULT_WORK_TIME = 25 * 60        // 25 minutes
+DEFAULT_SHORT_BREAK = 5 * 60       // 5 minutes
+DEFAULT_LONG_BREAK = 15 * 60       // 15 minutes
+WORK_SESSIONS_BEFORE_LONG_BREAK = 4 // 4 work sessions
+```
+### Changing Timer Durations
+
+Edit the constants in the script section:
+
+```javascript
+const DEFAULT_WORK_TIME = 30 * 60;        // Change to 30 minutes
+const DEFAULT_SHORT_BREAK = 10 * 60;      // Change to 10 minutes
+const DEFAULT_LONG_BREAK = 20 * 60;       // Change to 20 minutes
+```
+
+### Technology Stack
+
+- **Svelte**: Reactive component framework
+- **JavaScript**: Core timer logic
+- **CSS**: Styling and animations
+
+### Key Features
+
+- **Reactive State**: Uses Svelte's reactive statements (`$:`) for automatic UI updates
+- **Interval Management**: Properly manages `setInterval` to prevent memory leaks
+- **State Tracking**: Maintains separate flags for break type and session state
+- **Automatic Transitions**: Handles session transitions without user intervention
+
+
+### Running the Timer
+
+1. Click **Start** to begin your work session
+2. Focus on your task for 25 minutes
+3. When the timer reaches 00:00, a break will automatically start
+4. Use **Pause** if you need to temporarily stop the timer
+5. Use **Reset** to return to the initial state
