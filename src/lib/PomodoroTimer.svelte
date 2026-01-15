@@ -111,6 +111,7 @@
         font-size: 1.5rem;
         color: #8a86a3;
         font-style: italic;
+        font-style: oblique;
     }
 
     .display {
