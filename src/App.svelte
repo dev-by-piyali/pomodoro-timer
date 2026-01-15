@@ -1,7 +1,8 @@
 <script>
+    import PomodoroTimer from "./lib/PomodoroTimer.svelte";
 </script>
 
-<main>pomodoro-timer</main>
-
-<style>
-</style>
+<main>
+    <h1>Pomodoro Timer</h1>
+    <PomodoroTimer />
+</main>
