@@ -83,7 +83,7 @@
         ? isLongBreak
             ? "Long Break"
             : "Short Break"
-        : "Work";
+        : "Working Session";
 </script>
 
 <div class="timer">
@@ -109,20 +109,18 @@
 
     .session-type {
         font-size: 1.5rem;
-        text-transform: uppercase;
+        color: #8a86a3;
     }
 
     .display {
         font-size: 6rem;
+        color: #4b4570;
+        font-weight: bold;
+        text-shadow: 0 6px 24px rgba(124, 106, 230, 0.18);
     }
 
     .controls {
         display: flex;
         gap: 1rem;
-    }
-
-    .btn:disabled {
-        opacity: 0.4;
-        cursor: not-allowed;
     }
 </style>
