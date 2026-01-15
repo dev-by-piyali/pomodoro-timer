@@ -6,8 +6,9 @@ A minimalist Pomodoro Timer built with Svelte.
 
 The Pomodoro Technique is a time management method that uses a timer to break work into intervals, traditionally 25 minutes in length, separated by short breaks. This approach helps improve focus, reduce mental fatigue, and maintain consistent productivity throughout the day.
 
-<img width="581" height="1025" alt="image" src="https://github.com/user-attachments/assets/38ae2cd2-ab54-4808-8e17-d5532646471e" />
-<img width="1914" height="1014" alt="image" src="https://github.com/user-attachments/assets/1f2178f8-9fb1-49bf-93e1-cd72940aaf95" />
+<img width="350" alt="image" src="https://github.com/user-attachments/assets/38ae2cd2-ab54-4808-8e17-d5532646471e" />
+<img height="605" alt="image" src="https://github.com/user-attachments/assets/e4689b33-93d5-4130-9487-af4a5c747541" />
+<img height="1024" alt="image" src="https://github.com/user-attachments/assets/1f2178f8-9fb1-49bf-93e1-cd72940aaf95" />
 
 ### Technology Stack
 
@@ -51,7 +52,7 @@ The timer displays the current session type at the top:
 - **SHORT BREAK**: 5-minute rest period
 - **LONG BREAK**: 15-minute extended rest period
 
-## ⚙️ Configuration
+## Configuration
 
 The timer uses the following default values (in seconds):
 
