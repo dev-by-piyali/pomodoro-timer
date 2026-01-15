@@ -118,6 +118,7 @@
         font-size: 6rem;
         color: #4b4570;
         font-weight: bold;
+        margin-bottom: 1rem;
         text-shadow: 0 6px 24px rgba(124, 106, 230, 0.18);
     }
 

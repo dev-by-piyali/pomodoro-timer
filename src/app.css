@@ -64,6 +64,6 @@ button:disabled {
   opacity: 0.4;
   cursor: not-allowed;
   box-shadow: none;
-  background: #dcd7f5;
-  color: #9c97c6;
+  background: #b0a3f3;
+  color: #fff;
 }
