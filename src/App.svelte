@@ -22,15 +22,21 @@
     h1 {
         color: #3b3654;
         font-weight: bolder;
+        padding-inline: 0.5rem;
         text-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     }
 
     img {
         opacity: 0.85;
         filter: saturate(0.9) blur(0.2px);
-        width: 450px;
+        width: 90%;
     }
 
+    @media (min-width: 450px) {
+        img {
+            width: 450px;
+        }
+    }
     @media (min-width: 900px) {
         main {
             flex-direction: row;
